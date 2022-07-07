@@ -1,14 +1,3 @@
-/********************************************************************************* 
-* WEB422 – Assignment 04 
-* I declare that this assignment is my own work in accordance with Seneca Academic Policy. No part of this 
-* assignment has been copied manually or electronically from any other source (including web sites) or 
-* distributed to other students. 
-* 
-*
-Name: _Yi-Tso Kuo____________ Student ID: __166577197___ Date: __Feb. 20, 2022_ 
-*
-********************************************************************************/
-
 <div class="navbar-container">
 
     <!-- Top navbar -->
@@ -51,7 +40,9 @@ Name: _Yi-Tso Kuo____________ Student ID: __166577197___ Date: __Feb. 20, 2022_
                 <div>
                     <mat-form-field appearance="fill">
                         <mat-label>Artist</mat-label>
-                        <input matInput type="text">
+                        <form (ngSubmit)='handleSearch()'>
+                            <input matInput type="text" name="searchString" [(ngModel)]='searchString'>
+                        </form>
                         <mat-icon matSuffix>search</mat-icon>
                     </mat-form-field>
                 </div>
@@ -64,7 +55,7 @@ Name: _Yi-Tso Kuo____________ Student ID: __166577197___ Date: __Feb. 20, 2022_
                     <p mat-line> New Releases </p>
                 </a>
 
-                <a mat-list-item>
+                <a mat-list-item routerLink="/favourites">
                     <mat-icon mat-list-icon>
                         favorite
                     </mat-icon>
